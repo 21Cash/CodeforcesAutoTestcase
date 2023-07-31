@@ -1,9 +1,10 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
 const fs = require('fs')
-const port = 10043;
 
 app.use(bodyParser.json());
+
+const port = 10043;
 
 app.post('/', (req, res) => {
   const data = req.body;
@@ -31,13 +32,18 @@ app.post('/', (req, res) => {
   }
   
 
+  const pathData = fs.readFileSync('path.txt', 'UTF-8');
+  const lines = pathData.split(/\r?\n/);
   
+  const pathStr = lines[0];
   
   const str = JSON.stringify(arr);
   
+  // console.log("WritePath : ");
+  // console.log(pathStr);
   
   
-  fs.writeFile('D://Workspaces/C++ Workspace/Practice/cash.cpp__tests', str,
+  fs.writeFile(pathStr, str,
     function(err) {     
   });
 
