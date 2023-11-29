@@ -1,0 +1,5 @@
+{
+	"tests_file_suffix": "__tests"
+}
+
+Write this in the settings of cppfastolympiccoding
